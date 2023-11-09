@@ -1,16 +1,13 @@
 package com.example.googlestorepage
 
-import android.R.attr.width
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -28,16 +25,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.googlestorepage.ui.theme.DarkBlue
 import com.example.googlestorepage.ui.theme.GoogleStorePageTheme
 
 
@@ -60,7 +56,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Screen(name: String, modifier: Modifier = Modifier) {
-    val defaultBackgroundColor = Color(0xFF050B18)
+    val context = LocalContext.current
+    val defaultBackgroundColor = DarkBlue
     LazyColumn(
         modifier = Modifier
             .background(color = defaultBackgroundColor)
@@ -96,6 +93,7 @@ fun Screen(name: String, modifier: Modifier = Modifier) {
             }
         }
         item {
+            //Text annotation
             Text (
                 text = "Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the \"Ancient\", whilst defending their own.",
                 style = TextStyle(
@@ -106,8 +104,25 @@ fun Screen(name: String, modifier: Modifier = Modifier) {
                 ),
                 modifier = Modifier
                     .width(327.dp)
-                    .height(76.dp)
                     .padding(start = 24.dp, bottom = 43.dp)
+            )
+        }
+        item {
+            //Video Preview Carousel
+            VideoCarousel(previews = listOf(painterResource(id = R.drawable.image_18),
+                painterResource(id = R.drawable.image_19)
+            ))
+        }
+
+        item {
+            //Big yellow button
+            InstallButton(
+                onClick = {
+                    Toast.makeText(context, "CLICKED", Toast.LENGTH_LONG).show()
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 24.dp, top = 20.dp, end = 24.dp, bottom = 40.dp)
             )
         }
     }
