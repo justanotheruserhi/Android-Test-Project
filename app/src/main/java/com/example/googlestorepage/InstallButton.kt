@@ -22,7 +22,7 @@ fun InstallButton(onClick: () -> Unit, modifier: Modifier = Modifier) {
         modifier = modifier.height(64.dp)
     ) {
         Button(
-            onClick = {},
+            onClick = onClick,
             modifier = Modifier
                 .height(64.dp)
                 .fillMaxWidth(),

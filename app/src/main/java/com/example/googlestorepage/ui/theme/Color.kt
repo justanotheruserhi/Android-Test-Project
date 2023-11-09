@@ -12,3 +12,4 @@ val Pink40 = Color(0xFF7D5260)
 
 val YellowMod = Color(0xFFF4D144)
 val DarkBlue = Color(0xFF050B18)
+val WhiteMod = Color(0xFFA8ADB7)

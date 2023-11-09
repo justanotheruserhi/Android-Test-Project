@@ -71,6 +71,7 @@ fun Screen(name: String, modifier: Modifier = Modifier) {
                 modifier = Modifier
                     .fillMaxWidth())
         }
+
         item {
             //logo
             Box(
@@ -92,6 +93,7 @@ fun Screen(name: String, modifier: Modifier = Modifier) {
                         .size(54.dp))
             }
         }
+
         item {
             //Text annotation
             Text (
@@ -107,11 +109,30 @@ fun Screen(name: String, modifier: Modifier = Modifier) {
                     .padding(start = 24.dp, bottom = 43.dp)
             )
         }
+
         item {
             //Video Preview Carousel
             VideoCarousel(previews = listOf(painterResource(id = R.drawable.image_18),
                 painterResource(id = R.drawable.image_19)
             ))
+        }
+
+        item {
+            //Review & Ratings heading
+            Text(
+                text = "Review & Ratings",
+                style = TextStyle(
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight(700),
+                    color = Color(0xFFEEF2FB),
+                    letterSpacing = 0.6.sp,
+                ),
+                modifier = Modifier
+                    .padding(start = 24.dp, top = 20.dp))
+        }
+
+        item {
+            //Review
         }
 
         item {
