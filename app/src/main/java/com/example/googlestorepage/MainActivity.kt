@@ -16,7 +16,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -34,6 +36,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.googlestorepage.ui.theme.DarkBlue
+import com.example.googlestorepage.ui.theme.DividerColor
 import com.example.googlestorepage.ui.theme.GoogleStorePageTheme
 
 
@@ -132,7 +135,51 @@ fun Screen(name: String, modifier: Modifier = Modifier) {
         }
 
         item {
-            //Review
+            //Comment 1
+            Box (modifier = Modifier
+                .fillMaxWidth()
+                .padding(
+                    start = 24.dp,
+                    end = 24.dp,
+                    top = 16.dp,
+                )) {
+                Comments(
+                    comment = CommentBase("Auguste Conte",
+                        "“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”",
+                        "February 14, 2019",
+                        painterResource(R.drawable.avatar))
+                )
+            }
+        }
+
+        item {
+            //Divider
+            Box (
+                Modifier
+                    .border(width = 1.dp, color = DividerColor)
+                    .padding(start = 38.dp, 1.dp)
+                    .width(300.dp)
+            ) {
+
+            }
+        }
+
+        item {
+            //Comment 1
+            Box (modifier = Modifier
+                .fillMaxWidth()
+                .padding(
+                    start = 24.dp,
+                    end = 24.dp,
+                    top = 16.dp,
+                )) {
+                Comments(
+                    comment = CommentBase("Jang Marcelino",
+                        "“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”",
+                        "February 14, 2019",
+                        painterResource(R.drawable.avatar_2))
+                )
+            }
         }
 
         item {

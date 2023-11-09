@@ -22,6 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.googlestorepage.CommentBase
+import com.example.googlestorepage.ui.theme.WhiteMod
 
 @Composable
 fun Comments(comment: CommentBase, modifier: Modifier = Modifier) {
@@ -36,7 +37,7 @@ fun Comments(comment: CommentBase, modifier: Modifier = Modifier) {
                 fontSize = 12.sp,
                 lineHeight = 20.sp,
                 fontWeight = FontWeight(400),
-
+                color = WhiteMod,
                 letterSpacing = 0.5.sp,
             )
         )
@@ -75,6 +76,7 @@ private fun CommentAuthor(comment: CommentBase) {
                 style = TextStyle(
                     fontSize = 12.sp,
                     fontWeight = FontWeight(400),
+                    color = WhiteMod,
                     letterSpacing = 0.5.sp,
                 )
             )
